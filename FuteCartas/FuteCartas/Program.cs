@@ -19,8 +19,8 @@ namespace FuteCartas
                 bool rodada = false;
                 PlayerX p = new PlayerX();
                 PlayerX p2 = new PlayerX();
-                p.Reset();
-                p2.Reset();
+              //  p.Reset();
+               // p2.Reset();
                 Console.Clear();
 
                 rodada = sorte.Next(1, 3) == 1 ? true : false;
@@ -45,7 +45,7 @@ namespace FuteCartas
                         rodada = false;
                     }
 
-                    if (p2.Acabou == true && p.Acabou == true) { sair = true; }
+                   // if (p2.Acabou == true && p.Acabou == true) { sair = true; }
 
                 }
 
