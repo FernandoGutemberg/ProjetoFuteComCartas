@@ -8,5 +8,6 @@ namespace FuteCartas
 {
     internal class PlayerX
     {
+        // Teste
     }
 }
