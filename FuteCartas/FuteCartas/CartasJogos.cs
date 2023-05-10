@@ -49,9 +49,46 @@ namespace FuteCartas
         }
 
 
-        /*
-            -------	ACRESCENTAR O SORTEIO --------  
-        */
+        public void SorteioCartas()
+        {
+            CartasRodada.Clear();
+            ScoreDaRodada.Clear();
+            ScoreCartas = 0;
+            ;
+            for (int i = 0; i < 3; i++)
+            {
+                string formatoCarta = "";
+                if (i < 2)
+                {
+                     Thread.Sleep(600);
+                    formatoCarta = "║ {0,-21}Pts: {1,3} ║    Carregando a proxima carta...";
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                    formatoCarta = "║ {0,-21}Pts: {1,3} ║    Todas as Cartas foram Sorteadas";
+                }
+                CartaJogada = Sorteio.Next(6);
+                CartasRodada.Add(Cards[CartaJogada]);
+                ScoreDaRodada.Add(PontCards[CartaJogada]);
+                ScoreCartas += PontCards[CartaJogada];
+                string CartaDaVez = Cards[CartaJogada];
+                string Pontos = $"{PontCards[CartaJogada]}";
+                string linhaCarta = string.Format(formatoCarta, CartaDaVez, Pontos).PadRight(LBordadaAcima.Length - 2);
+                Console.WriteLine(LBordadaAcima);
+                Console.WriteLine(linhaCarta);
+                Console.WriteLine(LBordadaAbaixo);
+            }
+            
+            if (CartasRodada[0] == CartasRodada[1] && CartasRodada[1] == CartasRodada[2]) { Repeticao = true;   }
+            
+            else
+            {
+                BordaCima();
+                Console.WriteLine($"║ Score da Rodada: {ScoreCartas.ToString().PadRight(13)}║");
+                BordaBaixo();
+            }
+        }
 
 
         public void CartaoAmarelo()

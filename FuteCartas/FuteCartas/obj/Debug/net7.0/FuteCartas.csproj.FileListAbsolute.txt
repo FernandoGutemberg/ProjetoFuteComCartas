@@ -33,3 +33,18 @@ C:\Users\jeuvi\source\repos\gabys\FuteCartas\FuteCartas\obj\Debug\net7.0\refint\
 C:\Users\jeuvi\source\repos\gabys\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.pdb
 C:\Users\jeuvi\source\repos\gabys\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.genruntimeconfig.cache
 C:\Users\jeuvi\source\repos\gabys\FuteCartas\FuteCartas\obj\Debug\net7.0\ref\FuteCartas.dll
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\bin\Debug\net7.0\FuteCartas.exe
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\bin\Debug\net7.0\FuteCartas.deps.json
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\bin\Debug\net7.0\FuteCartas.runtimeconfig.json
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\bin\Debug\net7.0\FuteCartas.dll
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\bin\Debug\net7.0\FuteCartas.pdb
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.csproj.AssemblyReference.cache
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.AssemblyInfoInputs.cache
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.AssemblyInfo.cs
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.csproj.CoreCompileInputs.cache
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.dll
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\refint\FuteCartas.dll
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.pdb
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\FuteCartas.genruntimeconfig.cache
+C:\Users\jeuvi\source\repos\att poo\FuteCartas\FuteCartas\obj\Debug\net7.0\ref\FuteCartas.dll

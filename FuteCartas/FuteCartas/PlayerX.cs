@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuteCartas
-
+{ 
     public class PlayerX : Textos
 {
 	    CartasJogos Card = new CartasJogos();
@@ -169,12 +169,101 @@ public void Reset()
                 Acabou = true;
             }
         }
-	
-       /* ---------------COLOCAR GOL MARCADO ----------- */
 
-      /* --------- COLOCAR PENALTI ---------------  */
+        public void GolMarcado()
+        {
+            this.Gol++;
+            Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
+            Console.WriteLine(textoJogo[1].PadLeft(Console.WindowWidth / 2 + textoJogo[1].Length / 2) + this.Nome); //Console.WriteLine("GOOOOOOOOOOOLLLL!!!! Do " + this.Nome);
+            Console.WriteLine(textoJogo[2].PadLeft(Console.WindowWidth / 2 + textoJogo[2].Length / 2) + this.Gol); //Console.WriteLine("Total de gols é de " + this.Gol);
+            Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
+            Console.WriteLine("");
+            Console.ReadKey();
+        }
 
-       /* --------- COLOCAR O JOGO RODANDO ----- */
+        public void PenalidadeChute()
+        {
+            Console.WriteLine("");
+
+            Console.WriteLine(textoJogo[9].PadLeft(Console.WindowWidth / 2 + textoJogo[9].Length / 2)); //"Penalidade MAXIMA!"
+            Console.WriteLine(textoJogo[10].PadLeft(Console.WindowWidth / 2 + textoJogo[10].Length / 2));
+
+            Console.WriteLine("");
+
+            Console.WriteLine(Nome + ", o jogador da vez, deve tentar o chute.");
+            if (PC == true) { Chute = Sorteio.Next(1, 4); Console.WriteLine("O chute foi {0}", Chute); }
+            else
+            {
+                Console.WriteLine("Digite: [1] - Chute na Esquerda | | [2] Chute no Centro | | [3] Chute a direita");
+                Chute = int.Parse(Console.ReadLine());
+            }
 
         }
+        public void PenalidadeDefesa()
+        {
+            Console.WriteLine("");
+
+            Console.WriteLine(textoJogo[9].PadLeft(Console.WindowWidth / 2 + textoJogo[9].Length / 2)); //"Penalidade MAXIMA!"
+
+            Console.WriteLine("Agora a vez da defesa, o Goleiro do jogador {0} deverá tentar defender o chute.", Nome);
+            if (PC == true) { Defesa = Sorteio.Next(1, 4); Console.WriteLine("A Defesa foi {0}", Defesa); }
+            else
+            {
+                Console.WriteLine("Digite: [1] - Defesa na Esquerda | | [2] Defesa no Centro | | [3] Defesa a direita");
+                Defesa = int.Parse(Console.ReadLine());
+            }
+        }
+        public void JogoRodando()
+        {
+            Console.Clear();
+            Cabecario();
+            Console.ResetColor();
+            Console.WriteLine();
+            Card.SorteioCartas();
+            if (Card.Repeticao == false)
+            {
+                this.Score += Card.ScoreCartas;
+            }
+            Console.ResetColor();
+
+            Card.CartaoGol();
+            if (Card.golBool == true)
+            {
+                GolMarcado();
+                Card.golBool = false;
+            }
+            Card.CartaoPenalti();
+            if (Card.Penalti == true)
+            {
+                PenaltiChute = true;
+                Card.Penalti = false;
+            }
+            if (PenaltiChute == true) { PenalidadeChute(); }
+
+            Card.CartaoEnergia();
+            if (Card.Energia == true)
+            {
+                Energe++;
+                Card.Energia = false;
+            }
+
+            Card.CartaoAmarelo();
+            if (Card.Amarela == true)
+            {
+                ContaAmarelo++;
+                if (ContaAmarelo > 1) { Energe = Energe - 2; }
+                else { encerrandoRodada(); }
+                Card.Amarela = false;
+            }
+            Card.CartaoVermelho();
+            if (Card.Vermelho == true)
+            {
+                Energe = Energe - 2;
+                Card.Vermelho = false;
+            }
+            Card.CartaoFalta();
+            Console.WriteLine("");
+        }
+
+    }
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jeuvi\\source\\repos\\gabys\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectUniqueName": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "projectName": "FuteCartas",
-      "projectPath": "C:\\Users\\jeuvi\\source\\repos\\gabys\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectPath": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "packagesPath": "C:\\Users\\jeuvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jeuvi\\source\\repos\\gabys\\FuteCartas\\FuteCartas\\obj\\",
+      "outputPath": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jeuvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
