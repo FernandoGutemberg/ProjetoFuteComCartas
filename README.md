@@ -2,10 +2,11 @@
 Criar um jogo onde o usuário jogará será sorteado 3 cartas com efeitos podendo ser benéficos ou não.
                                                                                                       
 									RELATÓRIO
-												      
-No dia 28 de março de 2023 foi apresentado pelo professor Cesar Ferreira da disciplina de Programação Orientada a Objetos II, como trabalho de 25 pontos, a realização, em grupo, o de um jogo para a empresa xPlayB2. 
-                            Jogo TRUCOBOLL
-Como jogar Trucoboll?
+												   
+	No dia 28 de março de 2023 foi apresentado pelo professor Cesar Ferreira da disciplina de Programação Orientada a Objetos II, como trabalho de 25 pontos, a realização, em grupo, o de um jogo para a empresa xPlayB2. 
+                            
+			    Jogo TRUCOBOLL
+	Como jogar Trucoboll?
 Você pode jogar o Trucuboll contra um segundo jogador ou contra a própria máquina, na modalidade 1x1, onde cada jogador receberá 10 energias. 
 Funções e energia de cada carta
 
