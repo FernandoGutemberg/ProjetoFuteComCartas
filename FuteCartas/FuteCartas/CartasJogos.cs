@@ -60,12 +60,12 @@ namespace FuteCartas
                 string formatoCarta = "";
                 if (i < 2)
                 {
-                     Thread.Sleep(600);
+                     Thread.Sleep(300);
                     formatoCarta = "║ {0,-21}Pts: {1,3} ║    Carregando a proxima carta...";
                 }
                 else
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(700);
                     formatoCarta = "║ {0,-21}Pts: {1,3} ║    Todas as Cartas foram Sorteadas";
                 }
                 CartaJogada = Sorteio.Next(6);

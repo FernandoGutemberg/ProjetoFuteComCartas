@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FuteCartas
 { 
@@ -76,12 +77,25 @@ public void Reset()
 
         public void Apresentacao()
         {
-            Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
-            Console.WriteLine(textoJogo[0].PadLeft(Console.WindowWidth / 2 + textoJogo[0].Length / 2));  //"--- Bem vindo ao jogo de cartas e futebol ---",
-            Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
-            Console.WriteLine("Prefere jogar:\n [ 1 ]  1x1 - Player x Player\n [ 2 ]  1xPC - player x Computador");
-            PlayerPC = int.Parse(Console.ReadLine());
-            Console.Clear();
+            do {
+                Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
+                Console.WriteLine(textoJogo[0].PadLeft(Console.WindowWidth / 2 + textoJogo[0].Length / 2));  //"--- Bem vindo ao jogo de cartas e futebol ---",
+                Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
+                Console.WriteLine("Prefere jogar:\n [ 1 ]  1x1 - Player x Player\n [ 2 ]  1xPC - player x Computador \n [ 3 ]  Como Jogar");
+                PlayerPC = int.Parse(Console.ReadLine());
+                Console.Clear();
+                if (PlayerPC == 3)
+                {
+                    for (int i = 0; i < 16; i++)
+                    {
+                        Console.WriteLine("As regras são: \n");
+                        Console.WriteLine(Regras[i] + "\n ");
+                        Console.WriteLine("\n pressione qualquer botão para continuar: ");
+                        Console.ReadKey(); 
+                        Console.Clear(); 
+                    }
+                }
+            } while (PlayerPC == 3);
         }
 
         public void PlayerNumero()
@@ -252,7 +266,7 @@ public void Reset()
             {
                 ContaAmarelo++;
                 if (ContaAmarelo > 1) { Energe = Energe - 2; }
-                else { encerrandoRodada(); }
+                else { encerrandoRodada(); Console.WriteLine("\n Atenção no segundo cartão amarelo, você irá perder 2 energias "); }
                 Card.Amarela = false;
             }
             Card.CartaoVermelho();

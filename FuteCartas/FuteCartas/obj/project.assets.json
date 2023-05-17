@@ -8,19 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jeuvi\\.nuget\\packages\\": {}
+    "C:\\Users\\jeuvi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectUniqueName": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "projectName": "FuteCartas",
-      "projectPath": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectPath": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "packagesPath": "C:\\Users\\jeuvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jeuvi\\source\\repos\\att poo\\FuteCartas\\FuteCartas\\obj\\",
+      "outputPath": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\jeuvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

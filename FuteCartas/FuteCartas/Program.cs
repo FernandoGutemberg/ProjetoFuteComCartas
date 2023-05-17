@@ -24,6 +24,7 @@ namespace FuteCartas
                 p.Reset();
                 p2.Reset();
                 Console.Clear();
+                p.TituloGrande();
                 p.Apresentacao();
                 if (p.PlayerPC == 2)
                 { p2.PC = true; }
@@ -131,6 +132,12 @@ namespace FuteCartas
                 Console.WriteLine("");
                 Console.WriteLine("Deseja Continuar? \n [ 0 ] - Sim; \n [ 1 ] - Não;");
                 EncerrarJogo = int.Parse(Console.ReadLine());
+                Console.Clear();
+                for (int i = 0; i<6; i++)
+                { Console.WriteLine(p.TitulosG[i]); Thread.Sleep(100); }
+                Console.WriteLine("\nObrigado por jogar!");
+                p.Creditos();
+                Thread.Sleep(10000);
 
             }
         }

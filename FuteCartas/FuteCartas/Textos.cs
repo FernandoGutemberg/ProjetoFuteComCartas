@@ -10,9 +10,11 @@ namespace FuteCartas
     {
         public const string LBordadaUp = "╔══════════════════════════════════════════════════╗";
         public const string LBordadaDown = "╚══════════════════════════════════════════════════╝";
+        
+        
         public string[] textoJogo = new string[]
         {
-           /* 0 */ "--- Bem vindo ao jogo de cartas e futebol ---",
+           /* 0 */ "--- Bem vindo ao TRUCOBOLL ---",
            /* 1 */ "GOOOOOOOOOOOLLLL!!!! Do ",
            /* 2 */ "Total de gols é de ",
            /* 3 */ "Incrivel defesa do Goleiro!! Não foi dessa fez que vemos um Gol!",
@@ -29,9 +31,65 @@ namespace FuteCartas
            /* 14 */ "Energia restante: ",
            /* 15 */ "║ Pontuação: {0,-37} ║",
            /* 16 */ "║ Gols marcados: {0,-34}║",
-           /* 17 */ "║ Energia restante: {0,-30} ║"
+           /* 17 */ "║ Energia restante: {0,-30} ║",
+           /* 18 */ "Desenvolvido por:",
+           /* 19 */ "Jeú Victor, Gabriel Bento, Gabriella França,",
+           /* 20 */ "Fernando Gutemberg e Vitor Leopoldo",
+           /* 21*/  "Pressione qualquer tecla pra continuar "
 
         };
+        public string[] Regras = new string[]
+        {
+            /*00*/ //"",
+            /*01*/ "Quando o jogo começar, ambos jogadores recebem 10 energias.",
+            /*02*/"A cada tentativa, cada jogador terá “três cartas”\r\npara abrir.",
+            /*03*/"Estas cartas serão apresentadas: \r\n1 – Gol,\r\n2 - Pênalti,\r\n3 - Falta,\r\n4 - Cartão Amarelo,\r\n5 - Cartão Vermelho,\r\n6 - Energia.",
+            /*04*/"As três cartas serão abertas de forma aleatória.",
+            /*05*/"Caso as três cartas apresentem o valor “GOL”, marca-se um ponto para\r\no jogador, e passa a vêz para o adversário.",
+            /*06*/"Caso as três cartas apresentem o valor “ENERGIA”, o jogador ganha\r\nmais uma energia para jogar, e passa a vêz para o adversário.",
+            /*07*/"Caso as três cartas apresentem o valor “PENALTI”, o jogador continuará\r\njogando e deverá escolher outras três opções (Direita, Esquerda ou\r\nCentro).",
+            /*08*/"Após escolhido as três opções é a vez do adversário tentar defender.\r\n- Se a opção escolhida for diferente do jogador que cobrou o pênalti, \r\nSerá “GOL” para o jogador que fez o chute",
+            /*09*/"Caso as três cartas apresentem o valor “FALTA”, o jogador passa a vêz\r\npara o adversário.",
+            /*10*/"Caso as três cartas apresentem o valor “CARTÃO AMARELO”, o jogador\r\nperde UMA energia e é advertido que no próximo cartão amarelo ele\r\nperderá duas energias, e passa a vêz para o adversário.",
+            /*11*/"Caso as três cartas apresentem o valor “CARTÃO VERMELHO”, o\r\n jogador perde DUAS energias, e passa a vêz para o adversário.",
+            /*12*/"Em caso de as cartas não saírem iguais serão obedecidas a seguinte\r\npontuação:\r\n1 – Gol – 3 pontos,\r\n2 – Pênalti – 2 pontos,\r\n3 – Falta – 1 ponto,\r\n4 - Cartão Amarelo – 1 ponto,\r\n5 - Cartão Vermelho – 0 pontos,\r\n6 – Energia - 2 pontos.",
+            /*13*/"O número de gols marcados prevalece sobre qualquer pontuação, ou\r\nseja, por mais que um jogador tenha 100 pontos, mas ele não marcou\r\nnenhum gol, caso o adversário tenha feito um único gol, ele irá ganhar o\r\njogo.",
+            /*14*/"A partida irá empatar se:\r\nA) O número de gols e pontuação for igual.\r\nB) O número de pontos for igual, desde que nenhum adversário tenha\r\nmarcado gols.",
+            /*15*/"A partida irá estabelecer o vencedor quando:\r\nA) O número de energias acabar de ambos jogadores.\r\nB) Caso um único jogador tiver finalizado as suas jogadas e o outro\r\njogador ainda tiver energias, o jogo irá finalizar somente quando a\r\nenergia do último jogador acabar.\r\nC) No caso de número de gols igual, verifica-se a pontuação e\r\nestabelece o vencedor com maior pontuação.",
+          //  /*16*/""
+        };
 
+        public string[] TitulosG = new string[]
+        {
+            /*00*/ "████████╗██████╗  ██╗   ██╗  ██████╗   ████    ██████╗    ████    ██╗     ██╗     ",
+            /*01*/ "╚══██╔══╝██╔══██╗ ██║   ██║ ██╔════╝ ██╔═══██╗ ██╔══██╗ ██╔═══██╗ ██║     ██║     ",
+            /*02*/ "   ██║   ██████╔╝ ██║   ██║ ██║      ██║   ██║ ██████╔╝ ██║   ██║ ██║     ██║     ",
+            /*03*/ "   ██║   ██╔══██╗ ██║   ██║ ██║      ██║   ██║ ██╔══██╗ ██║   ██║ ██║     ██║     ",
+            /*04*/ "   ██║   ██║  ██║ ╚██████╔╝   █████╗   ████  ║ ██████╔╝   ████  ║ ██████╗ ██████╗ ",
+            /*05*/ "   ╚═╝   ╚═╝  ╚═╝  ╚═════╝    ╚════╝   ╚═════╝ ╚═════╝    ╚═════╝ ╚═════╝ ╚═════╝ "
+        };
+        public void Creditos()
+        {
+            int AlturaTela = Console.WindowHeight - 4;
+            Console.SetCursorPosition(0, AlturaTela);
+            Console.WriteLine(textoJogo[18]);
+            Console.WriteLine(textoJogo[19]);
+            Console.WriteLine(textoJogo[20]);
+        }
+        public void TituloGrande()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            for (int i = 0; i <6; i++) 
+            { 
+                Thread.Sleep(250);
+                Console.WriteLine(this.TitulosG[i].PadLeft(Console.WindowWidth / 2 + this.TitulosG[i].Length / 2));
+            }
+            Console.WriteLine("\n \n \n \n");
+            Console.WriteLine(this.textoJogo[21].PadLeft(Console.WindowWidth / 2 + this.textoJogo[21].Length / 2));//("Pressione qualquer tecla pra continuar: ");
+            Creditos();
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }
