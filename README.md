@@ -5,6 +5,7 @@ Criar um jogo onde o usuário jogará será sorteado 3 cartas com efeitos podend
 RELATÓRIO
 
 No dia 28 de março de 2023 foi apresentado pelo professor Cesar Ferreira da disciplina de Programação Orientada a Objetos II, como trabalho de 25 pontos, a realização, em grupo, o de um jogo para a empresa xPlayB2. 
+
 Jogo TRUCOBOLL
 
 Como jogar Trucoboll?
