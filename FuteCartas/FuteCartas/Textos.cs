@@ -111,8 +111,6 @@ namespace FuteCartas
     "",
     " OBRIGADO POR JOGAR! "
 });
-
-
             int a = 0;
             int j = 0;
             int AlturaTela = Console.WindowHeight;
@@ -140,12 +138,58 @@ namespace FuteCartas
                         int espacosEsquerda = (LarguraTela / 2) - (item.Length / 2);
                         Console.WriteLine($"{new string(' ', espacosEsquerda)}{item}");
                     }
-
                 }
-
                 a++;
             }
+        }
+        public void CartaoAmareloAcao() 
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\n \n \n \n");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇ CARTÃO  ▇");
+            Console.WriteLine("▇ AMARELO ▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            Console.ResetColor();
+            Console.WriteLine("\n CARTÃO AMARELO!!");
+        }
+        public void CartaoVermelhoAcao()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("\n \n \n \n");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇  CARTÃO  ▇");
+            Console.WriteLine("▇ VERMELHO ▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            Console.ResetColor();
+            Console.WriteLine("\n CARTÃO VERMELHO!!");
+            Thread.Sleep(10000);
+            Console.Clear();
+        }
+        public void GolAcao()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine("         ヘ───ヘ ");
+            Console.WriteLine(" 　　＿／　　 　＼ ");
+            Console.WriteLine("  ／ 　    　^  ^ ＼  ");
+            Console.WriteLine(" ｜ 　　　　　▼　  | ");
+            Console.WriteLine(" ｜　　　　　　ɞ  ノ -GOOOOLLLLL!!! ");
+            Console.WriteLine("  U￣U￣￣￣￣U￣U");
+        }
+        public void PenaltiAcao()
+        {
 
         }
+        public void FaltaAcao()
+        {
+
+        }
+        public void EnergiaAcao() { }
     }
 }

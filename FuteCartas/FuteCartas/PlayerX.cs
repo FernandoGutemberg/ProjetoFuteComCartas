@@ -245,12 +245,14 @@ public void Reset()
             {
                 GolMarcado();
                 Card.golBool = false;
+                GolAcao();
             }
             Card.CartaoPenalti();
             if (Card.Penalti == true)
             {
                 PenaltiChute = true;
                 Card.Penalti = false;
+                PenaltiAcao();
             }
             if (PenaltiChute == true) { PenalidadeChute(); }
 
@@ -259,6 +261,7 @@ public void Reset()
             {
                 Energe++;
                 Card.Energia = false;
+                EnergiaAcao();
             }
 
             Card.CartaoAmarelo();
@@ -268,14 +271,21 @@ public void Reset()
                 if (ContaAmarelo > 1) { Energe = Energe - 2; }
                 else { encerrandoRodada(); Console.WriteLine("\n Atenção no segundo cartão amarelo, você irá perder 2 energias "); }
                 Card.Amarela = false;
+                CartaoAmareloAcao();
             }
             Card.CartaoVermelho();
             if (Card.Vermelho == true)
             {
                 Energe = Energe - 2;
                 Card.Vermelho = false;
+                CartaoAmareloAcao() ;
             }
             Card.CartaoFalta();
+            if (Card.falta == true)
+            {
+                FaltaAcao();
+                Card.falta = false;
+            }
             Console.WriteLine("");
         }
 

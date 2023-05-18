@@ -30,6 +30,7 @@ namespace FuteCartas
         public bool Vermelho { get; set; }
         public bool Energia { get; set; }
         public bool Penalti { get; set; }
+        public bool falta { get; set; }
         public bool golBool { get; set; }
         public bool Repeticao { get; set; }
         public const string LBordadaAcima = "╔═══════════════════════════════╗";
@@ -160,6 +161,7 @@ namespace FuteCartas
                 BordaCima();
                 Console.WriteLine("Falta!! Perdeu uma rodada");
                 Repeticao = false;
+                falta = true;
                 BordaBaixo();
             }
         }
