@@ -133,10 +133,7 @@ namespace FuteCartas
                 Console.WriteLine("Deseja Continuar? \n [ 0 ] - Sim; \n [ 1 ] - Não;");
                 EncerrarJogo = int.Parse(Console.ReadLine());
                 Console.Clear();
-                for (int i = 0; i<6; i++)
-                { Console.WriteLine(p.TitulosG[i]); Thread.Sleep(100); }
-                Console.WriteLine("\nObrigado por jogar!");
-                p.Creditos();
+                p.CreditoFinais();
                 Thread.Sleep(10000);
 
             }

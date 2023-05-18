@@ -10,7 +10,7 @@ namespace FuteCartas
     {
         public const string LBordadaUp = "╔══════════════════════════════════════════════════╗";
         public const string LBordadaDown = "╚══════════════════════════════════════════════════╝";
-        
+        List<string> listCreditos = new List<string>();
         
         public string[] textoJogo = new string[]
         {
@@ -90,6 +90,62 @@ namespace FuteCartas
             Creditos();
             Console.ReadKey();
             Console.Clear();
+        }
+        public void CreditoFinais()
+        {
+            listCreditos.AddRange(this.TitulosG);
+            listCreditos.AddRange(new List<string>
+{
+                "",
+    "Materia: Programação Orientada Objetos II",
+    "Prof Cesar",
+    "",
+    "DESENVOLVEDORES:",
+    "Jeú Victor",
+    "Gabriella França",
+    "Gabriel Bento",
+    "Fernando Gutemberg",
+    "Vitor Leopoldo",
+    "",
+    "",
+    "",
+    " OBRIGADO POR JOGAR! "
+});
+
+
+            int a = 0;
+            int j = 0;
+            int AlturaTela = Console.WindowHeight;
+            int LarguraTela = Console.WindowWidth;
+            int z = (LarguraTela / 2) - 10;
+            int VariavelControle = AlturaTela - 19;
+            List<string> listFinal = new List<string>();
+            for (int i = AlturaTela; i > 0; i--)
+            {
+                Console.SetCursorPosition(0, Console.CursorTop);
+                if (i < VariavelControle && i >= 1)
+                {
+                    listCreditos.Add(" ");
+                }
+                listFinal.Add(listCreditos[a]);
+                j = i - 2;
+                if (j > 0)
+                {
+                    Thread.Sleep(450);
+                    Console.Clear();
+                    Console.SetCursorPosition(0, j);
+                    int larguraMaxima = listFinal.Max(item => item.Length);
+                    foreach (string item in listFinal)
+                    {
+                        int espacosEsquerda = (LarguraTela / 2) - (item.Length / 2);
+                        Console.WriteLine($"{new string(' ', espacosEsquerda)}{item}");
+                    }
+
+                }
+
+                a++;
+            }
+
         }
     }
 }
