@@ -188,7 +188,27 @@ namespace FuteCartas
         }
         public void FaltaAcao()
         {
-
+            string[] Texto = new string[]
+       {"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+        "▇▇▇▇ ENERGIA ▇▇▇",
+        "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+        "▇▇▇▇▇▎    ▐▇▇▇▇▇",
+        "▇▇▇▇▎    ▐▇▇▇▇▇▇",
+        "▇▇▇▎    ▐▇▇▇▇▇▇▇",
+        "▇▇▎          ▐▇▇",
+        "▇▎          ▐▇▇▇",
+        "▇▇▇▇▇▎    ▐▇▇▇▇▇",
+        "▇▇▇▇▎   ▐▇▇▇▇▇▇▇",
+        "▇▇▇▎  ▐▇▇▇▇▇▇▇▇▇",
+        "▇▇▎ ▐▇▇▇▇▇▇▇▇▇▇▇" ,
+        "▇▇▎▇▇▇▇ Pts: 02▇",
+        "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
+       };
+            foreach (string texto in Texto) { 
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(texto);
+                Console.ResetColor();
+            }
         }
         public void EnergiaAcao() { }
     }

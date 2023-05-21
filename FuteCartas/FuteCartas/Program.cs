@@ -10,6 +10,7 @@ namespace FuteCartas
     {
         static void Main(string[] args)
         {
+            PlayerX Efeito = new PlayerX();
             int EncerrarJogo = 0;
             Random sorte = new Random();
             while (EncerrarJogo == 0)
@@ -132,11 +133,12 @@ namespace FuteCartas
                 Console.WriteLine("");
                 Console.WriteLine("Deseja Continuar? \n [ 0 ] - Sim; \n [ 1 ] - Não;");
                 EncerrarJogo = int.Parse(Console.ReadLine());
-                Console.Clear();
-                p.CreditoFinais();
-                Thread.Sleep(10000);
-
+             
             }
+            Console.Clear();
+            Efeito.CreditoFinais();
+            Thread.Sleep(10000);
+
         }
     }
 }

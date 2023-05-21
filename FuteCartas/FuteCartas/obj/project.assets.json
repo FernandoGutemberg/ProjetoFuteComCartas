@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectUniqueName": "C:\\Users\\jeuvi\\source\\repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "projectName": "FuteCartas",
-      "projectPath": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
+      "projectPath": "C:\\Users\\jeuvi\\source\\repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\FuteCartas.csproj",
       "packagesPath": "C:\\Users\\jeuvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jeuvi\\Source\\Repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\obj\\",
+      "outputPath": "C:\\Users\\jeuvi\\source\\repos\\ProjetoFuteComCartas\\FuteCartas\\FuteCartas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
