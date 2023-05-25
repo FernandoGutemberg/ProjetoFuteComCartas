@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FuteCartas
 {
-    public class CartasJogos
+    public class CartasJogos : Textos
     {
+        
         public List<string> Cards = new List<string> { 
 		/*00*/ "Gol",
 		/*01*/ "Pênalti", 
@@ -23,6 +24,7 @@ namespace FuteCartas
 		/*04*/ 1,
 		/*05*/ 0 };
         public List<string> CartasRodada = new List<string>();
+        public List<string> BaralhoConcat = new List<string> { " //00 ", " //01", "//03 ", "//04 ", "//05 ", "//06 ", "//07 ", " //08", "//09 ", "//10 ", "//11 ", "//12 ", "//13 "};
         public List<int> ScoreDaRodada = new List<int>();
         public int CartaJogada { get; set; }
         public int ScoreCartas { get; set; }
@@ -35,6 +37,11 @@ namespace FuteCartas
         public bool Repeticao { get; set; }
         public const string LBordadaAcima = "╔═══════════════════════════════╗";
         public const string LBordadaAbaixo = "╚═══════════════════════════════╝";
+        public string[] ArrayConcat = new string[15];
+        public string StringVago1 { get; set; }
+        public string StringVago2 { get; set; }
+        public string StringConcat { get; set; }
+
         // public const string LBordaLaterais = "║                                 ║";
         Random Sorteio = new Random();
 
@@ -52,42 +59,46 @@ namespace FuteCartas
 
         public void SorteioCartas()
         {
+            int TercoJanela = Console.WindowWidth/3;
+            int largura = TercoJanela/3;
             CartasRodada.Clear();
             ScoreDaRodada.Clear();
+            BaralhoConcat.Clear();
             ScoreCartas = 0;
-            ;
-            for (int i = 0; i < 3; i++)
+            BaralhoTupla();
+            Array.Clear(ArrayConcat, 0, ArrayConcat.Length);
+            
+            for (int i = 0; i < 3; i++) 
             {
-                string formatoCarta = "";
-                if (i < 2)
-                {
-                     Thread.Sleep(300);
-                    formatoCarta = "║ {0,-21}Pts: {1,3} ║    Carregando a proxima carta...";
-                }
-                else
-                {
-                    Thread.Sleep(700);
-                    formatoCarta = "║ {0,-21}Pts: {1,3} ║    Todas as Cartas foram Sorteadas";
-                }
+                int Altura = 5;
+                var indice = 0;
                 CartaJogada = Sorteio.Next(6);
-                CartasRodada.Add(Cards[CartaJogada]);
-                ScoreDaRodada.Add(PontCards[CartaJogada]);
                 ScoreCartas += PontCards[CartaJogada];
-                string CartaDaVez = Cards[CartaJogada];
-                string Pontos = $"{PontCards[CartaJogada]}";
-                string linhaCarta = string.Format(formatoCarta, CartaDaVez, Pontos).PadRight(LBordadaAcima.Length - 2);
-                Console.WriteLine(LBordadaAcima);
-                Console.WriteLine(linhaCarta);
-                Console.WriteLine(LBordadaAbaixo);
+                CartasRodada.Add(Cards[CartaJogada]);
+                switch (CartaJogada)
+                {
+                    case 0: Console.ForegroundColor = ConsoleColor.DarkCyan; break;
+                    case 1: Console.ForegroundColor= ConsoleColor.DarkMagenta; break;
+                    case 2: Console.ForegroundColor=ConsoleColor.DarkGreen; break;
+                    case 3:Console.ForegroundColor= ConsoleColor.DarkBlue; break;
+                    case 4:Console.ForegroundColor= ConsoleColor.DarkYellow; break;
+                    case 5: Console.ForegroundColor = ConsoleColor.DarkRed; break;
+                }
+                   for (int j = 0; j < 13; j++)
+                   {
+                       Altura++;
+                       Console.SetCursorPosition(largura, Altura);
+                       Console.WriteLine(TuplaCards[j,CartaJogada]);
+                   }
+                   Console.ResetColor();
+                   largura += TercoJanela;
+                   
             }
-            
-            if (CartasRodada[0] == CartasRodada[1] && CartasRodada[1] == CartasRodada[2]) { Repeticao = true;   }
-            
-            else
+            if (CartasRodada[0] == CartasRodada[1] && CartasRodada[1] == CartasRodada[2]) 
             {
-                BordaCima();
-                Console.WriteLine($"║ Score da Rodada: {ScoreCartas.ToString().PadRight(13)}║");
-                BordaBaixo();
+                Thread.Sleep(400);
+                Console.Clear();
+                Repeticao = true;
             }
         }
 

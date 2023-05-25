@@ -35,7 +35,8 @@ namespace FuteCartas
            /* 18 */ "Desenvolvido por:",
            /* 19 */ "Jeú Victor, Gabriel Bento, Gabriella França,",
            /* 20 */ "Fernando Gutemberg e Vitor Leopoldo",
-           /* 21*/  "Pressione qualquer tecla pra continuar "
+           /* 21*/  "Pressione qualquer tecla pra continuar ",
+            /* 22*/ "║ Score da Rodada: {0,-32}║"
 
         };
         public string[] Regras = new string[]
@@ -68,6 +69,123 @@ namespace FuteCartas
             /*04*/ "   ██║   ██║  ██║ ╚██████╔╝   █████╗   ████  ║ ██████╔╝   ████  ║ ██████╗ ██████╗ ",
             /*05*/ "   ╚═╝   ╚═╝  ╚═╝  ╚═════╝    ╚════╝   ╚═════╝ ╚═════╝    ╚═════╝ ╚═════╝ ╚═════╝ "
         };
+        
+        public string[] CartaoAmareloArray = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃",
+            "▇▇▇   CARTÃO ▇▇▇",
+            "▇▇▇  AMARELO ▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇ Pts: 01▇",
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+        };
+        public string[] CartaoVermelhoArray = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃",
+            "▇▇▇  CARTÃO  ▇▇▇",
+            "▇▇▇ VERMELHO ▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇ Pts: 00▇",
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+        };
+        public string[] arrayGol = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃",
+            "▇▇▇▇   GOL   ▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇╔═══════════╗▇",
+            "▇▇║▯▯▯▯▯▯▯▯▯▯▯║▇",
+            "▇▇║▯▯▯▚ ● ▞▯▯▯║▇",
+            "▇▇║▯▯▯ ▘█▝ ▯▯▯║▇",
+            "▇▇     ▕▕      ▇",
+            "▇▇▃▃▃▃▃▃▃▃▃▃▃▃▃▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇ Pts: 03▇",
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+        };
+        public string[] arrayPenalti = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃", //00
+            "▇▇▇▇ PENALTI ▇▇▇", //01
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇", //02
+            "▇▇▇       ▇▇▇▇▇▇", //03
+            "▇▇▇ ▇▇▇▇▇  ▇▇▇▇▇", //04
+            "▇▇▇      ▇▇▇▇▇▇▇", //05
+            "▇▇▇  ▇▇▇▇▇▇▇▇▇▇▇", //06
+            "▇▇▇  ▇▇▇▇▇▇▇▇▇▇▇", //07
+            "▇▇▇  ▇▇▇▇▇▇▇▇▇▇▇", //08
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇", //10
+            "▇▇▇▇▇▇▇ Pts: 02▇", //11
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"  //12
+        };
+        public string[] arrayFalta = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃",
+            "▇▇▇▇  FALTA  ▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇        ▇▇▇▇▇",
+            "▇▇  ▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇  ▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇        ▇▇▇▇▇▇",
+            "▇▇  ▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇  ▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇  ▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▇▇▇ Pts: 01▇",
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔"
+        };
+        public string[] ArrayEnergia = new string[]
+        {
+            "▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃", //00
+            "▇▇▇▇ ENERGIA ▇▇▇",//01
+            "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
+            "▇▇▇▇▎    ▐▇▇▇▇▇▇", //04
+            "▇▇▇▎    ▐▇▇▇▇▇▇▇", //05
+            "▇▇▎          ▐▇▇", //06
+            "▇▎          ▐▇▇▇", //07
+            "▇▇▇▇▇▎    ▐▇▇▇▇▇", //08
+            "▇▇▇▇▎   ▐▇▇▇▇▇▇▇", //09
+            "▇▇▇▎  ▐▇▇▇▇▇▇▇▇▇", //10
+            "▇▇▎ ▐▇▇▇▇▇▇▇▇▇▇▇", //11
+            "▇▇▎▇▇▇▇ Pts: 02▇", //12
+            "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" //13
+        };
+        public string[,] TuplaCards = new string[13, 6];
+        public void BaralhoTupla()
+        {
+            for (int i = 0; i < arrayGol.Length; i++) 
+            { TuplaCards[i, 0] = arrayGol[i]; }
+            for (int j = 0; j < arrayPenalti.Length; j++)
+            {
+                TuplaCards[j,1] = arrayPenalti[j];
+            }
+            for (int i = 0; i < ArrayEnergia.Length; i++)
+            {
+                TuplaCards[i,2] = ArrayEnergia[i];
+            }
+            for (int i = 0; i <arrayFalta.Length; i++)
+            { TuplaCards[i, 3] = arrayFalta[i]; }
+            for (int i = 0;i < CartaoAmareloArray.Length; i++)
+            { TuplaCards[i,4] = CartaoAmareloArray[i];}
+            for (int i = 0; i < CartaoVermelhoArray.Length ; i++)
+            { TuplaCards[i,5] = CartaoVermelhoArray[i];}
+        }
         public void Creditos()
         {
             int AlturaTela = Console.WindowHeight - 4;
@@ -142,74 +260,59 @@ namespace FuteCartas
                 a++;
             }
         }
+        
         public void CartaoAmareloAcao() 
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("\n \n \n \n");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇ CARTÃO  ▇");
-            Console.WriteLine("▇ AMARELO ▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇");
+            foreach (string C in  CartaoAmareloArray) {  Console.WriteLine(C); }
             Console.ResetColor();
-            Console.WriteLine("\n CARTÃO AMARELO!!");
         }
         public void CartaoVermelhoAcao()
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("\n \n \n \n");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇  CARTÃO  ▇");
-            Console.WriteLine("▇ VERMELHO ▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
-            Console.WriteLine("▇▇▇▇▇▇▇▇▇▇▇▇");
+            foreach (string A in CartaoVermelhoArray) { Console.WriteLine(A); }
             Console.ResetColor();
-            Console.WriteLine("\n CARTÃO VERMELHO!!");
-            Thread.Sleep(10000);
             Console.Clear();
         }
         public void GolAcao()
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.WriteLine("         ヘ───ヘ ");
-            Console.WriteLine(" 　　＿／　　 　＼ ");
-            Console.WriteLine("  ／ 　    　^  ^ ＼  ");
-            Console.WriteLine(" ｜ 　　　　　▼　  | ");
+            Console.ForegroundColor= ConsoleColor.DarkCyan;
+           foreach (string g in arrayGol) { Console.WriteLine(g); }
+            Console.ResetColor();
+            /*Console.WriteLine("         ヘ───ヘ      ");
+            Console.WriteLine(" 　　＿／　　 　＼      ");
+            Console.WriteLine("  ／ 　    　^  ^ ＼   ");
+            Console.WriteLine(" ｜ 　　　　　▼　  |    ");
             Console.WriteLine(" ｜　　　　　　ɞ  ノ -GOOOOLLLLL!!! ");
-            Console.WriteLine("  U￣U￣￣￣￣U￣U");
+            Console.WriteLine("  U￣U￣￣￣￣U￣U     ");*/
+                           // "01020304050607080910,5"
         }
         public void PenaltiAcao()
         {
-
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            foreach (string p in arrayPenalti) { Console.WriteLine(p); }
+              
+                Console.ResetColor();
+            
         }
         public void FaltaAcao()
         {
-            string[] Texto = new string[]
-       {"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
-        "▇▇▇▇ ENERGIA ▇▇▇",
-        "▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇",
-        "▇▇▇▇▇▎    ▐▇▇▇▇▇",
-        "▇▇▇▇▎    ▐▇▇▇▇▇▇",
-        "▇▇▇▎    ▐▇▇▇▇▇▇▇",
-        "▇▇▎          ▐▇▇",
-        "▇▎          ▐▇▇▇",
-        "▇▇▇▇▇▎    ▐▇▇▇▇▇",
-        "▇▇▇▇▎   ▐▇▇▇▇▇▇▇",
-        "▇▇▇▎  ▐▇▇▇▇▇▇▇▇▇",
-        "▇▇▎ ▐▇▇▇▇▇▇▇▇▇▇▇" ,
-        "▇▇▎▇▇▇▇ Pts: 02▇",
-        "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
-       };
-            foreach (string texto in Texto) { 
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine(texto);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            foreach(string f in arrayFalta) {  Console.WriteLine(f); }
+
                 Console.ResetColor();
-            }
+            
         }
-        public void EnergiaAcao() { }
+        public void EnergiaAcao()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            foreach (string e in ArrayEnergia) { Console.WriteLine(e); }
+                                             //"0102030405060708" 16 de largura
+       
+                Console.ResetColor();
+            
+        }
     }
 }

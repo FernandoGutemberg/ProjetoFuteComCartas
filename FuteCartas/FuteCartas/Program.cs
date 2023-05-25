@@ -10,9 +10,12 @@ namespace FuteCartas
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             PlayerX Efeito = new PlayerX();
             int EncerrarJogo = 0;
             Random sorte = new Random();
+            int currentCursorTop = Console.CursorTop;
+            int currentCursorLeft = Console.CursorLeft;
             while (EncerrarJogo == 0)
             {
                 bool sair = false;
@@ -46,7 +49,7 @@ namespace FuteCartas
 
                 while (sair == false)
                 {
-
+                    Console.SetCursorPosition(currentCursorLeft, currentCursorTop);
                     if (rodada == false)
                     {
                         if (p.PenaltiDefesa == true && p2.PenaltiChute == true)
@@ -54,6 +57,7 @@ namespace FuteCartas
                             if (p.PenaltiDefesa == true) { p.PenalidadeDefesa(); }
                             if (p.Defesa == p2.Chute) { p.DefesaGoleiro(); }
                             else { p2.GolMarcado(); }
+                            Console.Clear();
                             p2.Cabecario();
                             p2.Pontuacao();
                             Console.ReadKey();
@@ -62,6 +66,7 @@ namespace FuteCartas
                         }
                         if (p.Acabou == false)
                         {
+                            Console.Clear();
                             p.JogoRodando();
                             if (p.PenaltiChute == true)
                             {
@@ -71,7 +76,7 @@ namespace FuteCartas
                             p.Score += c.ScoreCartas;
                             if (p.PenaltiChute != true) { p.Pontuacao(); }
                             Console.ReadKey();
-                            Console.Clear();
+                            //Console.Clear();
                             p.encerrandoRodada();
                             r++;
                             rodada = true;
@@ -83,7 +88,7 @@ namespace FuteCartas
                             rodada = true;
                         }
                     }
-
+                    Console.SetCursorPosition(currentCursorLeft, currentCursorTop);
                     if (rodada == true)
                     {
                         if (p2.Acabou == false)
@@ -93,12 +98,14 @@ namespace FuteCartas
                             {
                                 if (p2.Defesa == p.Chute) { p2.DefesaGoleiro(); }
                                 else { p.GolMarcado(); }
+                                //Console.Clear() ;
                                 p.Cabecario();
                                 p.Pontuacao();
                                 Console.ReadKey();
                                 p2.PenaltiDefesa = false;
                                 p.PenaltiChute = false;
                             }
+                            Console.Clear();
                             p2.JogoRodando();
                             if (p2.PenaltiChute == true)
                             {

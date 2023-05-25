@@ -82,7 +82,7 @@ public void Reset()
                 Console.WriteLine(textoJogo[0].PadLeft(Console.WindowWidth / 2 + textoJogo[0].Length / 2));  //"--- Bem vindo ao jogo de cartas e futebol ---",
                 Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
                 Console.WriteLine("Prefere jogar:\n [ 1 ]  1x1 - Player x Player\n [ 2 ]  1xPC - player x Computador \n [ 3 ]  Como Jogar");
-                PlayerPC = int.Parse(Console.ReadLine());
+                 PlayerPC = int.Parse(Console.ReadLine());
                 Console.Clear();
                 if (PlayerPC == 3)
                 {
@@ -132,10 +132,12 @@ public void Reset()
                 Console.WriteLine(text4.PadLeft(Console.WindowWidth / 2 + text4.Length / 2));
                 Console.ResetColor();
             	}
-          
+            
+            string text0 = (string.Format(textoJogo[22], Card.ScoreCartas));
             string text1 = (string.Format(textoJogo[15], Score));
             string text2 = (string.Format(textoJogo[16], Gol));
             string text3 = (string.Format(textoJogo[17], Energe));
+            if (Card.Repeticao == false || Acabou == false) { Console.WriteLine(text0.PadLeft(Console.WindowWidth / 2 + text0.Length / 2)); }
             Console.WriteLine(text1.PadLeft(Console.WindowWidth / 2 + text1.Length / 2));
             Console.WriteLine(text2.PadLeft(Console.WindowWidth /2 + text2.Length / 2));
             Console.WriteLine(text3.PadLeft(Console.WindowWidth /2 + text3.Length / 2));
@@ -229,16 +231,14 @@ public void Reset()
         }
         public void JogoRodando()
         {
+            //Console.SetCursorPosition(0, 0);
             Console.Clear();
             Cabecario();
-            Console.ResetColor();
-            Console.WriteLine();
             Card.SorteioCartas();
             if (Card.Repeticao == false)
             {
                 this.Score += Card.ScoreCartas;
             }
-            Console.ResetColor();
 
             Card.CartaoGol();
             if (Card.golBool == true)
