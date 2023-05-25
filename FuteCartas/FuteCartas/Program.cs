@@ -30,6 +30,7 @@ namespace FuteCartas
                 Console.Clear();
                 p.TituloGrande();
                 p.Apresentacao();
+                if (p.PlayerPC == 4) { p2.Desenvolvedor = true; p2.PC = true; }
                 if (p.PlayerPC == 2)
                 { p2.PC = true; }
 

@@ -57,7 +57,7 @@ namespace FuteCartas
             /*13*/"O número de gols marcados prevalece sobre qualquer pontuação, ou\r\nseja, por mais que um jogador tenha 100 pontos, mas ele não marcou\r\nnenhum gol, caso o adversário tenha feito um único gol, ele irá ganhar o\r\njogo.",
             /*14*/"A partida irá empatar se:\r\nA) O número de gols e pontuação for igual.\r\nB) O número de pontos for igual, desde que nenhum adversário tenha\r\nmarcado gols.",
             /*15*/"A partida irá estabelecer o vencedor quando:\r\nA) O número de energias acabar de ambos jogadores.\r\nB) Caso um único jogador tiver finalizado as suas jogadas e o outro\r\njogador ainda tiver energias, o jogo irá finalizar somente quando a\r\nenergia do último jogador acabar.\r\nC) No caso de número de gols igual, verifica-se a pontuação e\r\nestabelece o vencedor com maior pontuação.",
-          //  /*16*/""
+          //  /*16*/ ""
         };
 
         public string[] TitulosG = new string[]

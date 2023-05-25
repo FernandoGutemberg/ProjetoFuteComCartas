@@ -34,6 +34,7 @@ namespace FuteCartas
         public bool Penalti { get; set; }
         public bool falta { get; set; }
         public bool golBool { get; set; }
+        public bool DesenvolvedorSort { get; set; }
         public bool Repeticao { get; set; }
         public const string LBordadaAcima = "╔═══════════════════════════════╗";
         public const string LBordadaAbaixo = "╚═══════════════════════════════╝";
@@ -72,7 +73,15 @@ namespace FuteCartas
             {
                 int Altura = 5;
                 var indice = 0;
-                CartaJogada = Sorteio.Next(6);
+                if (DesenvolvedorSort == false) { CartaJogada = Sorteio.Next(6); }
+                else 
+                {
+                    Console.SetCursorPosition(5, 18);
+                    Console.WriteLine("Escolha o numero da carta para jogar: \n [00] Gol \n [01] Penalti \n [02] Energia \n [03] Falta \n [04] Cartão Amarelo \n [05] Cartão Vermelho");
+                    CartaJogada = int.Parse(Console.ReadLine());
+                    
+                }
+                
                 ScoreCartas += PontCards[CartaJogada];
                 CartasRodada.Add(Cards[CartaJogada]);
                 switch (CartaJogada)
@@ -158,9 +167,9 @@ namespace FuteCartas
         {
             if (Repeticao == true && CartaJogada == 0)
             {
-                BordaCima();
-                Console.WriteLine("Gol");
-                BordaBaixo();
+               // BordaCima();
+               // Console.WriteLine("Gol");
+               // BordaBaixo();
                 this.golBool = true;
                 Repeticao = false;
             }
