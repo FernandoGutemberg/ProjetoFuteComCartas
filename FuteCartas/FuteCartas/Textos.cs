@@ -272,9 +272,14 @@ namespace FuteCartas
             Console.WriteLine("");
             Console.WriteLine("");
             for (int i = 0; i <6; i++) 
-            { 
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                // if (i % 2 == 0) { Console.ForegroundColor = ConsoleColor.DarkRed; }
+                // else { Console.ForegroundColor= ConsoleColor.; }
+
                 Thread.Sleep(250);
                 Console.WriteLine(this.TitulosG[i].PadLeft(Console.WindowWidth / 2 + this.TitulosG[i].Length / 2));
+                Console.ResetColor();
             }
             Console.WriteLine("\n \n \n \n");
             Console.WriteLine(this.textoJogo[21].PadLeft(Console.WindowWidth / 2 + this.textoJogo[21].Length / 2));//("Pressione qualquer tecla pra continuar: ");
@@ -339,20 +344,29 @@ namespace FuteCartas
             }
         }
         
-        public void CartaoAmareloAcao() 
+        public void CartaoAmareloAcao()
         {
+            DimensaoTela();
+            AlTela = AlTela / 2 - 9;
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\n \n \n \n");
-            foreach (string C in  CartaoAmareloArray) {  Console.WriteLine(C); }
+            foreach (string C in  CartaoAmareloArray)
+            {
+                LaTela = (Console.WindowWidth / 2) - (C.Length / 2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela); Console.WriteLine(C); }
             Console.ResetColor();
         }
         public void CartaoVermelhoAcao()
         {
+            DimensaoTela();
+            AlTela = AlTela / 2 - 10;
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\n \n \n \n");
-            foreach (string A in CartaoVermelhoArray) { Console.WriteLine(A); }
+            foreach (string A in CartaoVermelhoArray)
+            {
+                LaTela = (Console.WindowWidth / 2) - (A.Length / 2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela); Console.WriteLine(A); }
             Console.ResetColor();
-            Console.Clear();
         }
         public void GolAcao()
         {
@@ -378,20 +392,34 @@ namespace FuteCartas
             Console.ResetColor();
             
             
-                           // "01020304050607080910,5"
         }
         public void PenaltiAcao()
         {
+
+            DimensaoTela();
+            AlTela = AlTela / 2 - 10;
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            foreach (string p in arrayPenalti) { Console.WriteLine(p); }
+            foreach (string p in arrayPenalti) 
+            {
+                LaTela = (Console.WindowWidth / 2) - (p.Length / 2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela);
+                Console.WriteLine(p); }
               
                 Console.ResetColor();
             
         }
         public void FaltaAcao()
         {
+
+            DimensaoTela();
+            AlTela = AlTela / 2 - 10;
             Console.ForegroundColor = ConsoleColor.Magenta;
-            foreach(string f in arrayFalta) {  Console.WriteLine(f); }
+            foreach(string f in arrayFalta) {
+                LaTela = (Console.WindowWidth / 2) - (f.Length / 2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela); 
+                Console.WriteLine(f); }
 
                 Console.ResetColor();
             
@@ -399,11 +427,20 @@ namespace FuteCartas
         public void EnergiaAcao()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            foreach (string e in ArrayEnergia) { Console.WriteLine(e); }
-                                             //"0102030405060708" 16 de largura
+
+            DimensaoTela();
+            AlTela = AlTela / 2 - 10;
+            foreach (string e in ArrayEnergia)
+            {
+                LaTela = (Console.WindowWidth / 2) - (e.Length / 2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela); Console.WriteLine(e); }
+                                             
        
                 Console.ResetColor();
             
         }
+
+       
     }
 }

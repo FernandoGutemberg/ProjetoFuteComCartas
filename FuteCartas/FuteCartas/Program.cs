@@ -118,7 +118,7 @@ namespace FuteCartas
                             p2.Score += c.ScoreCartas;
                             if (p2.PenaltiChute != true) { p2.Pontuacao(); }
                             Console.ReadKey();
-                            Console.Clear();
+                            //Console.Clear();
                             p2.encerrandoRodada();
                             r1++;
                             rodada = false;

@@ -80,42 +80,7 @@ namespace FuteCartas
 
         }
 
-        public void Apresentacao()
-        {
-            do {
-                Console.Clear();
-                Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
-                Console.WriteLine(textoJogo[0].PadLeft(Console.WindowWidth / 2 + textoJogo[0].Length / 2));  //"--- Bem vindo ao jogo de cartas e futebol ---",
-                Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
-                Console.WriteLine("Prefere jogar:\n [ 1 ]  1x1 - Player x Player\n [ 2 ]  1xPC - player x Computador \n [ 3 ]  Como Jogar \n [ 4 ]  Configurações");
-                 PlayerPC = int.Parse(Console.ReadLine());
-                Console.Clear();
-                if (PlayerPC == 3)
-                {
-                    for (int i = 0; i < 15; i++)
-                    {
-                        Console.WriteLine("As regras são: \n");
-                        Console.WriteLine(Regras[i] + "\n ");
-                        Console.WriteLine("\n pressione qualquer botão para continuar: ");
-                        Console.ReadKey(); 
-                        Console.Clear(); 
-                    }
-                }
-                else if (PlayerPC == 4)
-                {
-                    int Dev;
-                    do
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Deseja entrar no modo Desenvolvedor? Você irá ter total controle das Cartas \n [ 1 ] Sim \n [ 2 ] Não");
-                         Dev = int.Parse(Console.ReadLine());
-                        if (Dev == 1) { Desenvolvedor = true;}
-                        else if (Dev == 2) { PlayerPC = 3; }
-                        else { Console.Clear(); Console.WriteLine("Opção invalida!"); }
-                    } while (Dev != 1 && Dev != 2);
-                }
-            } while (PlayerPC == 3);
-        }
+       
 
         public void PlayerNumero()
         {
@@ -156,7 +121,7 @@ namespace FuteCartas
             Console.WriteLine(LBordadaUp2.PadLeft(Console.WindowWidth / 2 + LBordadaUp2.Length / 2));
             Console.WriteLine(textoFinal.PadLeft(Console.WindowWidth / 2 + textoFinal.Length / 2));
             Console.WriteLine(LBordadaDown2.PadLeft(Console.WindowWidth / 2 + LBordadaDown2.Length / 2));
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
         }
         public void Pontuacao()
         {
@@ -338,9 +303,10 @@ namespace FuteCartas
             Card.CartaoVermelho();
             if (Card.Vermelho == true)
             {
+                Card.CartaoVermelho();
                 Energe = Energe - 2;
                 Card.Vermelho = false;
-                CartaoAmareloAcao() ;
+                CartaoVermelhoAcao();
             }
             Card.CartaoFalta();
             if (Card.falta == true)

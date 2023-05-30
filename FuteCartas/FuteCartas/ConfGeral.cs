@@ -36,9 +36,15 @@ namespace FuteCartas
                      }
                 for (int i = 0; i <20 ; i++ )
                 {
+                    if (i%2 ==0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    }
+                    else { Console.ForegroundColor= ConsoleColor.White; }
                     MetTela += 1;
                     Console.SetCursorPosition( 2, (i+5) );
                     Console.WriteLine(BolaAscii[i]);
+                    Console.ResetColor();
                 }
                     Console.WriteLine();
                     PlayerPC = int.Parse(Console.ReadLine());
@@ -70,7 +76,7 @@ namespace FuteCartas
                 } while (PlayerPC == 3);
 
             }
-      
+        
 
     }
     }

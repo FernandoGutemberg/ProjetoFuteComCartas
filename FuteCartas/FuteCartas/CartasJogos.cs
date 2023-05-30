@@ -71,6 +71,9 @@ namespace FuteCartas
             
             for (int i = 0; i < 3; i++) 
             {
+                if (i < 2)
+                { Thread.Sleep(350); }
+                else { Thread.Sleep(600); }
                 int Altura = 5;
                 var indice = 0;
                 if (DesenvolvedorSort == false) { CartaJogada = Sorteio.Next(6); }
@@ -134,6 +137,7 @@ namespace FuteCartas
                 BordaBaixo();
                 this.Vermelho = true;
                 Repeticao = false;
+                
 
             }
         }
