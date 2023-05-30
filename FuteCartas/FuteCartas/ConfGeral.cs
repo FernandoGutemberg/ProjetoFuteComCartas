@@ -70,19 +70,8 @@ namespace FuteCartas
                 } while (PlayerPC == 3);
 
             }
-            public void RedimensionandoTela()
-            {
+      
 
-                int LarTela = Console.WindowWidth;
-                int AltTela = Console.WindowHeight;
-                if (AltTela < 30 || LarTela < 120)
-                {
-                    Console.SetBufferSize(120, 30);
-                    Console.SetWindowSize(120, 30);
-
-                }
-            }
-
-        }
+    }
     }
 

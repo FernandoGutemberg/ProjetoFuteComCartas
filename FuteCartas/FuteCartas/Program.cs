@@ -11,7 +11,6 @@ namespace FuteCartas
         static void Main(string[] args)
         {
             ConfGeral GeralTela = new ConfGeral();
-            GeralTela.RedimensionandoTela();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             PlayerX Efeito = new PlayerX();
             int EncerrarJogo = 0;

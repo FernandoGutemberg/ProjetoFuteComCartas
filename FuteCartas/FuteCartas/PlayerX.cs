@@ -199,18 +199,18 @@ namespace FuteCartas
             {
                 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                if (c >22 /*&& c < 26 */) { Console.ResetColor(); Console.ForegroundColor= ConsoleColor.DarkYellow; }
-                if (c == 23)
+                if (c >22 && c < 28 ) { Console.ResetColor(); Console.ForegroundColor= ConsoleColor.DarkMagenta; }
+                if (c == 24)
                 {
                     string trof1 = (string.Format(item, Score));
                     Console.WriteLine(trof1);
                 }
-                else if (c == 24)
+                else if (c == 25)
                 {
                     string trof2 = (string.Format(item, Nome));
                     Console.WriteLine(trof2);
                 }
-                else if (c == 25)
+                else if (c == 26)
                 {
                     string trof3 = (string.Format(item, Gol));
                     Console.WriteLine(trof3);

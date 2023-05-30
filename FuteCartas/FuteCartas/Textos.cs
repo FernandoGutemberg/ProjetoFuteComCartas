@@ -13,7 +13,9 @@ namespace FuteCartas
 
         public const string LBordadaUp2 = "╔═══════════════════════════════════════════════════════════════════════╗";
         public const string LBordadaDown2 = "╚═══════════════════════════════════════════════════════════════════════╝";
-        
+        public int AlTela = Console.WindowHeight;
+        public int LaTela = Console.WindowWidth;
+
         List<string> listCreditos = new List<string>();
         
         public string[] textoJogo = new string[]
@@ -129,14 +131,16 @@ namespace FuteCartas
 /*19*/"                   ¶¶¶¶ ",
 /*20*/"               ¶¶¶¶¶¶¶¶¶¶¶¶ ",
 /*21*/"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
-/*22*/"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
-"             ¶¶¶ pts: {0,-3}¶¶¶ ",
-"             ¶¶¶ {0,-8}¶¶¶ ",
-"             ¶¶¶ Gol: {0,-3}¶¶¶",
-"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
-"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
-"           ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ "
-    
+/*22*/"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ "     ,
+/*23*/"      ╔════════════════════════════╗                     ",
+/*24*/"      ║     pts: {0,-8}          ║ ",
+/*25*/"      ║    Nome: {0,-12}      ║ ",
+/*26*/"      ║     Gol: {0,-8}          ║",
+/*27*/"      ╚════════════════════════════╝",
+/*28*/"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
+/*24*/"            ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ",
+/*24*/"           ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ "
+
         };
         
         public string[] CartaoAmareloArray = new string[]
@@ -278,6 +282,11 @@ namespace FuteCartas
             Console.ReadKey();
             Console.Clear();
         }
+        public void DimensaoTela()
+        {
+            AlTela = Console.WindowHeight;
+            LaTela = Console.WindowWidth;
+    }
         public void CreditoFinais()
         {
             listCreditos.AddRange(this.TitulosG);
@@ -347,15 +356,28 @@ namespace FuteCartas
         }
         public void GolAcao()
         {
-            Console.ForegroundColor= ConsoleColor.DarkCyan;
-           foreach (string g in arrayGol) { Console.WriteLine(g); }
+            Console.ForegroundColor= ConsoleColor.DarkGreen;
+            string[] CapiGol = new string[] 
+            {
+                "           ヘ───ヘ      ",
+                "　＿／　 　　＼      ",
+                "  ／ 　    　^  ^＼   ",
+                "｜ 　　　　　▼　  |    ",
+                "           ｜　　　　　　ɞ  ノ -GOOOOLLLLL!!! ",
+                "  U￣U￣￣￣￣U￣U     "
+            };
+            DimensaoTela();
+            AlTela = AlTela / 2 - 10;
+            foreach (string C in CapiGol)
+            {
+                LaTela = (Console.WindowWidth / 2)-(C.Length/2);
+                AlTela += 1;
+                Console.SetCursorPosition(LaTela, AlTela);
+                Console.WriteLine(C);
+            }
             Console.ResetColor();
-            /*Console.WriteLine("         ヘ───ヘ      ");
-            Console.WriteLine(" 　　＿／　　 　＼      ");
-            Console.WriteLine("  ／ 　    　^  ^ ＼   ");
-            Console.WriteLine(" ｜ 　　　　　▼　  |    ");
-            Console.WriteLine(" ｜　　　　　　ɞ  ノ -GOOOOLLLLL!!! ");
-            Console.WriteLine("  U￣U￣￣￣￣U￣U     ");*/
+            
+            
                            // "01020304050607080910,5"
         }
         public void PenaltiAcao()
