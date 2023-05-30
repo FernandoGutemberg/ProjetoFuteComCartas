@@ -32,8 +32,8 @@ namespace FuteCartas
                 Console.Clear();
                 GeralTela.TituloGrande();
                 GeralTela.Apresentacao(); ;
-                if (p.PlayerPC == 4) { p2.Desenvolvedor = true; p2.PC = true; }
-                if (p.PlayerPC == 2)
+                if (GeralTela.PlayerPC == 4) { p2.Desenvolvedor = true; p2.PC = true; }
+                if (GeralTela.PlayerPC == 2)
                 { p2.PC = true; }
 
                 string linha1 = " Player 1 ";
@@ -134,15 +134,26 @@ namespace FuteCartas
                     if (p2.Acabou == true && p.Acabou == true) { sair = true; }
 
                 }
-                if (p.Gol > p2.Gol) { p.Ganhador(); p2.Perdedor(); }
-                else if (p2.Gol > p.Gol) { p2.Ganhador(); p.Perdedor(); }
-                else if (p.Gol == p2.Gol && p2.Score > p.Score) { p2.Ganhador(); p.Perdedor(); }
-                else if (p.Gol == p2.Gol && p.Score > p2.Score) { p.Ganhador(); p2.Perdedor(); }
-                else { p.Empate(); Console.WriteLine(p.Nome + " e " + p2.Nome); p.Pontuacao(); p2.Pontuacao(); }
+                if (p.Gol > p2.Gol) { p.Ganhador(); 
+                    //p2.Perdedor();
+                    }
+                else if (p2.Gol > p.Gol) { p2.Ganhador();// p.Perdedor(); 
+                }
+                else if (p.Gol == p2.Gol && p2.Score > p.Score) { p2.Ganhador();
+                    //p.Perdedor(); 
+                }
+                else if (p.Gol == p2.Gol && p.Score > p2.Score) { p.Ganhador();
+                    //p2.Perdedor();
+                }
+                else { p.Empate(); Console.WriteLine(p.Nome + " e " + p2.Nome); p.Pontuacao();
+                    //p2.Pontuacao();
+                }
+                Console.SetCursorPosition(50, 16);
                 Console.WriteLine("Rodadas {0} e {1}", r, r1);
-
-                Console.WriteLine("");
-                Console.WriteLine("Deseja Continuar? \n [ 0 ] - Sim; \n [ 1 ] - Não;");
+                Console.SetCursorPosition(50, 18);
+                Console.WriteLine("Deseja Continuar? ");
+                Console.SetCursorPosition(50, 19);
+                Console.WriteLine(" [ 0 ] - Sim; || [ 1 ] - Não;");
                 EncerrarJogo = int.Parse(Console.ReadLine());
              
             }

@@ -193,16 +193,36 @@ namespace FuteCartas
 
         public void Ganhador()
         {
-            Console.Clear();
-            Console.WriteLine(textoJogo[4].PadLeft(Console.WindowWidth / 2 + textoJogo[4].Length / 2) + Nome); // ("Parabens o jogador " + Nome + " é o ganhador!");
-            Console.WriteLine(textoJogo[5].PadLeft(Console.WindowWidth / 2 + textoJogo[5].Length / 2));
-            Pontuacao();
+            Console.Clear();            
+            int c = 0;
             foreach (var item in TrofeuASCII)
             {
+                
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(item);
+                if (c >22 /*&& c < 26 */) { Console.ResetColor(); Console.ForegroundColor= ConsoleColor.DarkYellow; }
+                if (c == 23)
+                {
+                    string trof1 = (string.Format(item, Score));
+                    Console.WriteLine(trof1);
+                }
+                else if (c == 24)
+                {
+                    string trof2 = (string.Format(item, Nome));
+                    Console.WriteLine(trof2);
+                }
+                else if (c == 25)
+                {
+                    string trof3 = (string.Format(item, Gol));
+                    Console.WriteLine(trof3);
+                }
+                else { Console.WriteLine(item); }
                 Console.ResetColor();
+                c++;
             }
+            Console.SetCursorPosition(50, 5);
+            Console.WriteLine(textoJogo[4] + Nome); // ("Parabens o jogador " + Nome + " é o ganhador!");
+            Console.SetCursorPosition(50, 6);
+            Console.WriteLine(textoJogo[5]);
         }
         public void Perdedor()
         {
