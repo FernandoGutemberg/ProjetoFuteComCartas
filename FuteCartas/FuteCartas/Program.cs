@@ -10,6 +10,8 @@ namespace FuteCartas
     {
         static void Main(string[] args)
         {
+            ConfGeral GeralTela = new ConfGeral();
+            GeralTela.RedimensionandoTela();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             PlayerX Efeito = new PlayerX();
             int EncerrarJogo = 0;
@@ -28,8 +30,8 @@ namespace FuteCartas
                 p.Reset();
                 p2.Reset();
                 Console.Clear();
-                p.TituloGrande();
-                p.Apresentacao();
+                GeralTela.TituloGrande();
+                GeralTela.Apresentacao(); ;
                 if (p.PlayerPC == 4) { p2.Desenvolvedor = true; p2.PC = true; }
                 if (p.PlayerPC == 2)
                 { p2.PC = true; }
@@ -46,7 +48,8 @@ namespace FuteCartas
                 Console.Clear();
 
                 rodada = sorte.Next(1, 3) == 1 ? true : false;
-
+                if (rodada == false) { p.IniciandoJogo(); }
+                else { p2.IniciandoJogo();}
 
                 while (sair == false)
                 {

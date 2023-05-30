@@ -26,8 +26,14 @@ namespace FuteCartas
         public bool PenaltiChute { get; set; }
         public bool PenaltiDefesa { get; set; }
         public bool Desenvolvedor { get; set; }
+        public string textoX = "║";
+        public string textoZ = "║";
+        public int tamanhoEspacoDisponivel { get; set; }
+        public int tamanhoTextoCentralizado { get; set; }
+        public int espacosEmBranco { get; set; }
+        public string textoFinal { get; set; }
 
-public void Reset()
+        public void Reset()
         {
             Nome = "";
             NumPlayer = 0;
@@ -55,19 +61,19 @@ public void Reset()
             string TextoCentralizado = textoJogo[11] + Nome;
 
             // calcula o tamanho do espaço disponível entre as bordas
-            int tamanhoEspacoDisponivel = LBordadaUp.Length - 2;
+             tamanhoEspacoDisponivel = LBordadaUp.Length - 2;
 
             // calcula o tamanho do texto centralizado
-            int tamanhoTextoCentralizado = TextoCentralizado.Length;
+             tamanhoTextoCentralizado = TextoCentralizado.Length;
 
             // calcula a quantidade de espaços em branco que precisa ser adicionada em cada lado do texto centralizado
-            int espacosEmBranco = (tamanhoEspacoDisponivel - tamanhoTextoCentralizado) / 2;
+             espacosEmBranco = (tamanhoEspacoDisponivel - tamanhoTextoCentralizado) / 2;
 
             // concatena o texto centralizado com os espaços em branco
-            string textoX = "║";
-            string textoZ = "║";
+             textoX = "║";
+             textoZ = "║";
 
-            string textoFinal = textoX+ TextoCentralizado.PadLeft(espacosEmBranco + tamanhoTextoCentralizado).PadRight(tamanhoEspacoDisponivel) +textoZ;
+             textoFinal = textoX+ TextoCentralizado.PadLeft(espacosEmBranco + tamanhoTextoCentralizado).PadRight(tamanhoEspacoDisponivel) +textoZ;
             Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
             Console.WriteLine(textoFinal.PadLeft(Console.WindowWidth / 2 + textoFinal.Length / 2) );
             Console.WriteLine(LBordadaDown.PadLeft(Console.WindowWidth / 2 + LBordadaDown.Length / 2));
@@ -136,6 +142,22 @@ public void Reset()
                 }
             }
         }
+        public void IniciandoJogo()
+        {
+            Console.Clear();
+            string textoiniciojogo = "Por favor aguarde! O jogador " + Nome + " irá começar!";
+            tamanhoEspacoDisponivel = LBordadaUp2.Length - 2;
+            tamanhoTextoCentralizado = textoiniciojogo.Length;
+            espacosEmBranco = (tamanhoEspacoDisponivel - tamanhoTextoCentralizado) / 2;
+
+            textoFinal = textoX + textoiniciojogo.PadLeft(espacosEmBranco + tamanhoTextoCentralizado).PadRight(tamanhoEspacoDisponivel) + textoZ;
+            int metadeTela = Console.WindowHeight /2 - 2;
+            Console.SetCursorPosition(0, metadeTela);
+            Console.WriteLine(LBordadaUp2.PadLeft(Console.WindowWidth / 2 + LBordadaUp2.Length / 2));
+            Console.WriteLine(textoFinal.PadLeft(Console.WindowWidth / 2 + textoFinal.Length / 2));
+            Console.WriteLine(LBordadaDown2.PadLeft(Console.WindowWidth / 2 + LBordadaDown2.Length / 2));
+            Thread.Sleep(5000);
+        }
         public void Pontuacao()
         {
             Console.WriteLine(LBordadaUp.PadLeft(Console.WindowWidth / 2 + LBordadaUp.Length / 2));
@@ -175,6 +197,12 @@ public void Reset()
             Console.WriteLine(textoJogo[4].PadLeft(Console.WindowWidth / 2 + textoJogo[4].Length / 2) + Nome); // ("Parabens o jogador " + Nome + " é o ganhador!");
             Console.WriteLine(textoJogo[5].PadLeft(Console.WindowWidth / 2 + textoJogo[5].Length / 2));
             Pontuacao();
+            foreach (var item in TrofeuASCII)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(item);
+                Console.ResetColor();
+            }
         }
         public void Perdedor()
         {
